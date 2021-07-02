@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>161</width>
-    <height>148</height>
+    <width>181</width>
+    <height>178</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>DC2200 Controller</string>
   </property>
   <widget class="QPushButton" name="run_button">
    <property name="geometry">
@@ -26,17 +26,7 @@
     <string>Run</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit">
-   <property name="geometry">
-    <rect>
-     <x>110</x>
-     <y>60</y>
-     <width>31</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
-  <widget class="QLineEdit" name="lineEdit_2">
+  <widget class="QLineEdit" name="DarkTimeLine">
    <property name="geometry">
     <rect>
      <x>110</x>
@@ -45,21 +35,11 @@
      <height>20</height>
     </rect>
    </property>
-  </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>60</y>
-     <width>81</width>
-     <height>21</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Dark time (s)</string>
+   <property name="accessibleDescription">
+    <string>This is the time the shutter will be closed in seconds.</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_3">
+  <widget class="QLineEdit" name="IlluminationTimeLine">
    <property name="geometry">
     <rect>
      <x>110</x>
@@ -68,8 +48,11 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="accessibleDescription">
+    <string>This is the time the shutter will be open in seconds.</string>
+   </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>20</x>
@@ -77,6 +60,38 @@
      <width>81</width>
      <height>21</height>
     </rect>
+   </property>
+   <property name="accessibleDescription">
+    <string>This is the time the shutter will be closed in seconds.</string>
+   </property>
+   <property name="text">
+    <string>Dark time (s)</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="StepSizeLine">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>150</y>
+     <width>31</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="accessibleDescription">
+    <string>This is the time between each sample illuminaton step. It will be used to calculate the step size in % brightness.</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>120</y>
+     <width>81</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="accessibleDescription">
+    <string>This is the time the shutter will be open in seconds.</string>
    </property>
    <property name="text">
     <string>Illumination time (s)</string>
@@ -86,16 +101,19 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>120</y>
+     <y>150</y>
      <width>101</width>
      <height>21</height>
     </rect>
    </property>
+   <property name="accessibleDescription">
+    <string>This is the time between each sample illuminaton step. It will be used to calculate the step size in % brightness.</string>
+   </property>
    <property name="text">
-    <string>Time between Samples (s)</string>
+    <string>Time between step (s)</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_4">
+  <widget class="QLineEdit" name="CurrentPercentLine">
    <property name="geometry">
     <rect>
      <x>80</x>
@@ -114,8 +132,27 @@
      <height>21</height>
     </rect>
    </property>
+   <property name="accessibleDescription">
+    <string>This is the current brightness level.</string>
+   </property>
    <property name="text">
     <string>Current brightness (%)</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="rev_Check">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>60</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="accessibleDescription">
+    <string>This will add in a reverse to the sample. The actual time of the experiment will be double the illumination time in this case.</string>
+   </property>
+   <property name="text">
+    <string>include reverse</string>
    </property>
   </widget>
  </widget>
